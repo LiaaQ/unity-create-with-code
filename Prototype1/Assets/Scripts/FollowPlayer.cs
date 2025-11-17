@@ -3,13 +3,7 @@ using UnityEngine;
 public class FollowPlayer : MonoBehaviour
 {
     public GameObject player; // Reference to the player GameObject
-    private Vector3 offset = new Vector3(0, 6, -9);
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Vector3 offset = new Vector3(0, 6, -9);
 
     // Update is called once per frame
     void LateUpdate()
