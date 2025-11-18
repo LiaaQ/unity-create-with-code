@@ -9,17 +9,44 @@ public class GameManager : MonoBehaviour
 {
     private int score = 0;
     private float spawnRate = 1.0f;
-    public bool gameOver = false;
+    private bool isPaused = false;
+    public int lives = 3;
 
     public List<GameObject> targets;
     public TextMeshProUGUI gameOverText;
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI livesText;
     public GameObject titleScreen;
+    public GameObject pauseScreen;
     public Button restartButton;
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) && lives > 0 && !titleScreen.activeInHierarchy)
+        {
+            TogglePause();
+        }
+    }
+
+    public void TogglePause()
+    {
+        isPaused = !isPaused;
+
+        if (isPaused)
+        {
+            Time.timeScale = 0f;
+            pauseScreen.SetActive(true);
+        }
+        else 
+        {
+            Time.timeScale = 1f;
+            pauseScreen.SetActive(false);
+        }
+    }
 
     IEnumerator SpawnTarget()
     {
-        while(!gameOver)
+        while(lives>0)
         {
             yield return new WaitForSeconds(spawnRate);
             int index = Random.Range(0, targets.Count);
@@ -33,19 +60,26 @@ public class GameManager : MonoBehaviour
         scoreText.text = "Score: " + score;
     }
 
+    public void UpdateLives(int value)
+    {
+        lives += value;
+        livesText.text = "Lives: " + lives;
+        if (lives == 0) { GameOver(); }
+    }
+
     public void StartGame(int difficulty)
     {
         spawnRate /= difficulty;
         StartCoroutine(SpawnTarget());
         UpdateScore(0);
+        UpdateLives(0);
         titleScreen.gameObject.SetActive(false);
     }
 
-    public void GameOver()
+    private void GameOver()
     {
         gameOverText.gameObject.SetActive(true);
         restartButton.gameObject.SetActive(true);
-        gameOver = true;
 
     }
 

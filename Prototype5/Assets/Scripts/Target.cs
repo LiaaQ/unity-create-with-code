@@ -30,28 +30,29 @@ public class Target : MonoBehaviour
         transform.position = RandomSpawnPos();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void DestroySelf()
     {
-        
-    }
-
-    private void OnMouseDown()
-    {
-        if (!gameManager.gameOver)
+        if(gameManager.lives > 0)
         {
             Destroy(gameObject);
             Instantiate(explosionParticle, transform.position, explosionParticle.transform.rotation);
             gameManager.UpdateScore(pointValue);
+            if (pointValue < 0)
+            {
+                gameManager.UpdateLives(-1);
+            }
         }
-        
     }
 
     private void OnTriggerEnter(Collider other)
     {
         Destroy(gameObject);
-        if (pointValue > 0) { gameManager.GameOver(); }
+        if (pointValue > 0 && gameManager.lives > 0) {
+            gameManager.UpdateLives(-1);
+        }
     }
+
+
 
     Vector3 RandomForce()
     {
