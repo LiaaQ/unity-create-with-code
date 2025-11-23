@@ -520,7 +520,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1063528945
 RectTransform:
   m_ObjectHideFlags: 0
@@ -940,7 +940,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraManager
   smoothSpeed: 3
-  vertOffset: 0
+  vertOffset: 3
 --- !u!1 &1899638121
 GameObject:
   m_ObjectHideFlags: 0
@@ -1129,7 +1129,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2092024602}
         m_TargetAssemblyTypeName: ScoreManager, Assembly-CSharp
-        m_MethodName: RestartGame
+        m_MethodName: restartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1206,7 +1206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23ac8d9e0f1d21044ab42710ee10b3ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
-  counterText: {fileID: 391870417}
+  counterText: {fileID: 0}
   gameOverUI: {fileID: 1063528944}
   isGameOver: 0
 --- !u!4 &2092024603

@@ -5,7 +5,7 @@ public class CameraManager : MonoBehaviour
 {
 
     public float smoothSpeed = 3f;
-    public float vertOffset = 3f;
+    public float vertOffset = 2f;
 
     private float targetY;
 

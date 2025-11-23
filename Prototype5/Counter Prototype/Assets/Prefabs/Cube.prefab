@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 7656393983997531251}
   - component: {fileID: 5512793917150613713}
   - component: {fileID: 7084511883730928112}
+  - component: {fileID: 422660036343770598}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Cube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,7 +122,7 @@ Rigidbody:
   m_GameObject: {fileID: 6140764789446007232}
   serializedVersion: 5
   m_Mass: 10
-  m_LinearDamping: 0
+  m_LinearDamping: 0.5
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -138,4 +139,19 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
+--- !u!114 &422660036343770598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6140764789446007232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 702f5dc44c3007c44be66f257072dcf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Cube
+  border: 7
+  speed: 2
+  hasSettled: 0
