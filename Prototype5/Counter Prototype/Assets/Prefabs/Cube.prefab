@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 6140764789446007232}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.85, y: 1.27, z: -0.87175}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -123,7 +123,7 @@ Rigidbody:
   serializedVersion: 5
   m_Mass: 10
   m_LinearDamping: 0.5
-  m_AngularDamping: 0.05
+  m_AngularDamping: 0.1
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -135,8 +135,8 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
@@ -152,6 +152,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 702f5dc44c3007c44be66f257072dcf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cube
-  border: 7
-  speed: 2
+  border: 5
+  speed: 4
+  colorPalette:
+  - {r: 0.9245283, g: 0.53640085, b: 0.82886416, a: 1}
+  - {r: 0.3764706, g: 0.71723217, b: 0.85882354, a: 1}
+  - {r: 0.9528302, g: 0.82367516, b: 0.46293166, a: 1}
+  - {r: 0.43169275, g: 0.8396226, b: 0.5514317, a: 1}
+  - {r: 0.7354102, g: 0.48584908, b: 1, a: 1}
+  - {r: 1, g: 0.6416996, b: 0.48627448, a: 1}
   hasSettled: 0

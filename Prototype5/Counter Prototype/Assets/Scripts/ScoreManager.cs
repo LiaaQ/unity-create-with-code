@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -22,8 +21,11 @@ public class ScoreManager : MonoBehaviour
 
     public void AddScore()
     {
-        count+=1;
-        counterText.text = "Count: " + count;
+        if(!isGameOver)
+        {
+            count+=1;
+            counterText.text = "Score: " + count;
+        }
     }
 
     public void GameOver()

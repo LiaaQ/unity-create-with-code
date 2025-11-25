@@ -6,6 +6,7 @@ public class CubeManager : MonoBehaviour
     public GameObject cubePrefab;
     public float offsetY = 4f;
 
+    [SerializeField] private float border = 5f;
     private GameObject currCube;
     private CameraManager camManager;
     private ScoreManager scoreManager;
@@ -14,7 +15,7 @@ public class CubeManager : MonoBehaviour
     void Start()
     {
         camManager = Camera.main.GetComponent<CameraManager>();
-        scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
+        scoreManager = GetComponent<ScoreManager>();
         StartCoroutine(SpawnCubes());
     }
 
@@ -22,8 +23,9 @@ public class CubeManager : MonoBehaviour
     {
         while(!scoreManager.isGameOver)
         {
-            Vector3 spawnPos = new Vector3(0, Camera.main.transform.position.y + offsetY, 0);
+            Vector3 spawnPos = new Vector3(Random.Range(-border, border), Camera.main.transform.position.y + offsetY, 0);
             currCube = Instantiate(cubePrefab, spawnPos, Quaternion.identity);
+            currCube.GetComponent<Cube>().border = border;
 
             yield return new WaitUntil(() => currCube.GetComponent<Cube>().hasSettled);
 
