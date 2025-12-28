@@ -3,7 +3,7 @@
 public abstract class Character : MonoBehaviour
 {
     [Header("Movement Settings")]
-    [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] protected float moveSpeed = 5f;
 
     protected Rigidbody2D rb;
     protected bool isGrounded;

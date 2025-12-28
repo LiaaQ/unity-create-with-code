@@ -26,7 +26,7 @@ public class Jumper : Character
 
     public override void UseAbility()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && jumpsRemaining > 0)
+        if (jumpsRemaining > 0)
         {
             Jump();
         }
@@ -34,6 +34,8 @@ public class Jumper : Character
 
     private void Jump()
     {
+
+        Debug.Log("Jump!");
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         jumpsRemaining--;
