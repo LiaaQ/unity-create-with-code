@@ -42,6 +42,7 @@ public class CharacterSwitcher : MonoBehaviour
     {
         Vector3 position = characters[currentIndex].transform.position;
 
+        characters[currentIndex].CancelAbility();
         characters[currentIndex].gameObject.SetActive(false);
 
         currentIndex = index;

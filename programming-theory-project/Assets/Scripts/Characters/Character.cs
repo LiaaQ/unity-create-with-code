@@ -40,5 +40,10 @@ public abstract class Character : MonoBehaviour
     }
 
     // 🔹 Polymorphic ability
-    public abstract void UseAbility();
+    protected abstract void UseAbility();
+
+    public virtual void CancelAbility()
+    {
+        StopAllCoroutines();
+    }
 }

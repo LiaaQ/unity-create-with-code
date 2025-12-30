@@ -24,7 +24,7 @@ public class Jumper : Character
         }
     }
 
-    public override void UseAbility()
+    protected override void UseAbility()
     {
         if (jumpsRemaining > 0)
         {

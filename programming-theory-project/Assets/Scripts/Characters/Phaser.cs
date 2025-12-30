@@ -23,7 +23,7 @@ public class Phaser : Character
         phasingLayer = LayerMask.NameToLayer("PhasingPlayer");
     }
 
-    public override void UseAbility()
+    protected override void UseAbility()
     {
         if (canPhase)
         {
@@ -63,5 +63,16 @@ public class Phaser : Character
         Color c = spriteRenderer.color;
         c.a = alpha;
         spriteRenderer.color = c;
+    }
+
+    public override void CancelAbility()
+    {
+        base.CancelAbility();
+
+        isPhasing = false;
+        canPhase = true;
+
+        gameObject.layer = normalLayer;
+        SetTransparency(1f);
     }
 }

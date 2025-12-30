@@ -25,7 +25,7 @@ public class Dasher : Character
         }
     }
 
-    public override void UseAbility()
+    protected override void UseAbility()
     {
         if(!canDash || isDashing) return;
 
@@ -58,5 +58,13 @@ public class Dasher : Character
     {
         if (isDashing) return;
         base.HandleMovement();
+    }
+
+    public override void CancelAbility()
+    {
+        base.CancelAbility();
+        
+        isDashing = false;
+        canDash = true;
     }
 }
